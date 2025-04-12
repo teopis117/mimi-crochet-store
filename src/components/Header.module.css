@@ -1,0 +1,49 @@
+/* src/components/Header.module.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem; /* Ajusta el padding según necesites */
+    background-color: var(--clr-light-gray); /* Fondo gris claro */
+    border-bottom: 1px solid #e0e0e0; /* Borde sutil */
+  }
+  
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Espacio entre logo y texto */
+    text-decoration: none; /* Si el logo es un enlace */
+  }
+  
+  .logoImage {
+    height: 40px; /* Ajusta altura del logo */
+    width: auto; /* Mantiene proporción */
+  }
+  
+  .logoText {
+    font-family: var(--ff-headings); /* Fuente Quicksand */
+    font-weight: var(--fw-bold);
+    font-size: 1.5rem;
+    color: var(--clr-primary); /* Color morado */
+  }
+  
+  .navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5rem; /* Espacio entre enlaces */
+  }
+  
+  .navigation a {
+    font-family: var(--ff-body); /* Fuente Lato */
+    font-weight: var(--fw-bold); /* Hacemos los links bold */
+    color: var(--clr-neutral); /* Color marrón */
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+  }
+  
+  .navigation a:hover,
+  .navigation a.active { /* Estilo para enlace activo (más adelante) */
+    color: var(--clr-secondary); /* Color rosa en hover */
+  }

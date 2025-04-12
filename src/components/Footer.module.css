@@ -1,0 +1,23 @@
+/* src/components/Footer.module.css */
+.footer {
+  padding: 1.5rem 2rem;
+  background-color: var(--clr-neutral); /* Fondo marrón */
+  color: var(--clr-background); /* Texto color crema/amarillo */
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: auto; /* Empuja el footer hacia abajo */
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+    color: var(--clr-white); /* Enlaces blancos o claros */
+    font-weight: var(--fw-bold);
+    /* text-decoration: underline; */ /* Opcional: quitar subrayado */
+}
+
+.footer a:hover {
+    color: var(--clr-secondary); /* Rosa en hover */
+}

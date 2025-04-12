@@ -1,68 +1,93 @@
+/* src/index.css - Estilos Globales para Mimi Crochet */
+
+/* 1. Definición de Colores como Variables CSS */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --clr-background: #fbf3b3; /* Amarillo pálido del logo */
+  --clr-text: #333333; /* Texto principal oscuro */
+  --clr-primary: #8E44AD; /* Morado del logo */
+  --clr-secondary: #E91E63; /* Rosa del logo */
+  --clr-neutral: #795548; /* Marrón del logo */
+  --clr-white: #ffffff;
+  --clr-light-gray: #f8f9fa; /* Gris claro para fondos alternos */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  --ff-headings: 'Quicksand', sans-serif; /* Fuente para títulos */
+  --ff-body: 'Lato', sans-serif; /* Fuente para cuerpo de texto */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  --transition-speed: 0.3s; /* Velocidad para transiciones */
+}
+
+/* 2. Reseteos Básicos y Box-Sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol, figure, blockquote, dl, dd {
+  margin: 0; /* Quita márgenes por defecto */
+}
+
+ul[role='list'],
+ol[role='list'] {
+  list-style: none; /* Quita estilos de lista por defecto */
+  padding: 0;
+}
+
+/* 3. Estilos Base del Body */
+body {
+  font-family: var(--ff-body); /* Aplica fuente base */
+  font-weight: var(--fw-regular);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--clr-text);
+  background-color: var(--clr-background); /* Aplica color de fondo base */
+  min-height: 100vh; /* Asegura que ocupe al menos toda la pantalla */
+  text-rendering: optimizeSpeed; /* Optimización de renderizado */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 4. Estilos Base para Imágenes */
+img, picture, video, canvas, svg {
+  display: block; /* Evita espacios extra */
+  max-width: 100%; /* Asegura que no se desborden */
+}
+
+/* 5. Estilos Base para Formularios (útil más adelante) */
+input, button, textarea, select {
+  font: inherit; /* Hereda la fuente del body */
+}
+
+/* 6. Estilos para Encabezados */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--ff-headings); /* Aplica fuente de títulos */
+  font-weight: var(--fw-bold); /* Peso Bold por defecto */
+  line-height: 1.2;
+  margin-bottom: 0.75em; /* Espacio debajo */
+  color: var(--clr-primary); /* Usa color primario (morado) */
+}
+/* Ajusta tamaño si quieres (ejemplo) */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+
+/* 7. Estilos para Enlaces */
 a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  color: var(--clr-secondary); /* Usa color secundario (rosa) */
+  text-decoration: none;
+  transition: color var(--transition-speed) ease;
 }
 a:hover {
-  color: #535bf2;
+  color: var(--clr-primary); /* Cambia a morado en hover */
+  text-decoration: underline;
 }
 
-body {
-  margin: 0;
+/* 8. Estructura para #root (Contenedor principal de React) */
+#root {
+  min-height: 100vh; /* Ocupa al menos toda la altura */
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  flex-direction: column; /* Permite que el footer se vaya abajo */
 }
